@@ -107,12 +107,11 @@
     }
 
     .mn3 {
-        background: red !important;
         position: absolute;
         z-index: 1;
         border: .25rem solid var(--black);
         inset-block-start: 50%;
-        inset-inline-end: -85%;
+        inset-inline-start: calc(100% - 0px);
     }
 
     .mn3 .mn3-item a {
