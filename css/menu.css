@@ -1,21 +1,26 @@
 .m {
-    max-inline-size: 33.75rem;
     margin: auto;
-    margin-block-start: 15.375rem;
+    margin-block-start: 100px;
+    max-inline-size: 22.5rem;
 }
 
-.mn1 {
+.c-mn1 {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: .5rem;
+}
+
+.mn1 .mn1-item {
+    margin: auto;
+    inline-size: 19.5rem;
 }
 
 .mn1 .mn1-item > a {
     display: block;
-    padding: .75rem;
+    white-space: nowrap;
+    padding-block: .75rem;
+    text-align: center;
     font: var(--titleMenu);
-    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.12), 0px 2px 3px rgba(0, 0, 0, 0.2);
-    background-color: var(--white);
 }
 
 .mn1 .mn1-item a:hover {
@@ -23,57 +28,96 @@
     color: var(--white);
 }
 
+.mn1 .mn1-item:hover .mn2 {
+    display: block;
+}
+
+/* nivel 2*/
 
 .mn2 {
     display: none;
-    margin-block-start: 1rem;
+    margin-block-start: .5rem;
+    margin-block-end: 1rem;
     border: .25rem solid var(--black);
-}
-
-.mn2-item {
-    position: relative;
-}
-
-.mn2 .mn2-item > a:hover {
-    font: var(--titleMenuHover);
-}
-
-.mn1 .mn1-item:hover .mn2 {
-    display: block;
 }
 
 .mn2 .mn2-item > a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-inline: 1.5rem;
     padding-block: .75rem;
-    background: var(--white);
+    padding-inline: 1.5rem;
 }
 
+.mn2 .mn2-item i {
+    display: inline-block;
+    transition: .3s all;
+}
 
-.mn3 {
-    display: none;
-    position: absolute;
-    border: .25rem solid var(--black);
-    inset-inline-end: -85%;
-    inset-block-start: 50%;
-    z-index: 1;
+.mn2 .mn2-item:hover i {
+    transform: rotate(90deg);
 }
 
 .mn2 .mn2-item:hover .mn3 {
     display: block;
 }
 
-.mn3 .mn3-item > a {
-    display: block;
-    padding-inline: 1.5rem;
-    padding-block: .75rem;
-    background: var(--white);
+
+/* nivel 3 */
+
+.mn3 {
+    display: none;
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        background-color: red;
+.mn3 .mn3-item {
+
+}
+
+.mn3 .mn3-item a {
+    display: block;
+    padding-block: .75rem;
+    padding-inline: 2.625rem;
+    white-space: nowrap;
+}
+
+@media screen and (min-width: 720px){    
+
+    .m {
+        min-inline-size: 33.75rem;
     }
+
+    .mn1 .mn1-item {
+        margin: initial;
+    }
+    
+    .mn1 .mn1-item > a {
+        padding: .75rem;
+    }
+
+    .c-mn1 {
+        flex-direction: row;
+    }
+
+    .mn2 .mn2-item {
+        position: relative;
+    }
+
+    .mn2 .mn2-item:hover i {
+        transform: none;
+    }
+
+    .mn3 {
+        background: red !important;
+        position: absolute;
+        z-index: 1;
+        border: .25rem solid var(--black);
+        inset-block-start: 50%;
+        inset-inline-end: -85%;
+    }
+
+    .mn3 .mn3-item a {
+        padding-inline: 1.5rem;
+        padding-block: .75rem;
+    }
+
 }
